@@ -34,6 +34,7 @@ header {
 .cell {
     width: 150px;
     height: 150px;
+    background-color: none;
 }
 
 .cellPainted {
@@ -45,7 +46,8 @@ header {
     justify-content: center;
 }
 
-button#clear {
+button#clear,
+button#gridSize {
     margin: 20px 0px;
     width: 100px;
     height: 40px;
