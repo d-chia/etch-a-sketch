@@ -70,7 +70,7 @@ function setCellSize(i) {
 function drawNewGrid(i) {
   const cellGrid = document.querySelectorAll(".cell");
   cellGrid.forEach((cell) => cell.remove());
-  for (let j = 0; j < i; j++) {
+  for (let j = 0; j < i * i; j++) {
     const cell = document.createElement("div");
     cell.classList.add("cell");
     container.appendChild(cell);}
