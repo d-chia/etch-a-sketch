@@ -39,3 +39,15 @@ header {
 .cellPainted {
     background-color: rgb(98, 98, 98);
 }
+
+.controls {
+    display: flex;
+    justify-content: center;
+}
+
+button#clear {
+    margin: 20px 0px;
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+}
