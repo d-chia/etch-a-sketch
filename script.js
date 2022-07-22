@@ -49,21 +49,29 @@ function changeGridSize() {
     sizeInput = alert("Error! Please enter a valid number between 1-100");
   }
   drawNewGrid(sizeInput);
+  setCellSize(sizeInput);
 }
-
-
-//use new grid size input to generate matching numbers of divs/cells
-
 
 
 
 //use new grid size input to calculate new size for cells (divide container size)
 
-function drawNewGrid(i) {
+function setCellSize(i) {
   let newCellSize = 600 / i;
   const cellGrid = document.querySelectorAll(".cell");
   cellGrid.forEach((cell) => {
-    cell.setAttribute("height", newCellSize);
-    cell.setAttribute("width", newCellSize);
+    cell.setAttribute("height", newCellSize + "px");
+    cell.setAttribute("width", newCellSize + "px");
   });
+}
+
+//clear old grid and use new grid size input to generate matching numbers of divs/cells
+
+function drawNewGrid(i) {
+  const cellGrid = document.querySelectorAll(".cell");
+  cellGrid.forEach((cell) => cell.remove());
+  for (let j = 0; j < i; j++) {
+    const cell = document.createElement("div");
+    cell.classList.add("cell");
+    container.appendChild(cell);}
 }
