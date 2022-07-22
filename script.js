@@ -37,16 +37,33 @@ function clearCells() {
   )}
 
  
-//event listener for gridSize button triggers pop up/input
+//event listener for gridSize button triggers pop up/input to get new side length
 
 const gridSize = document.querySelector("#gridSize");
 
-gridSize.addEventListener("click", changeGrid);
+gridSize.addEventListener("click", changeGridSize);
 
-function changeGrid() {
+function changeGridSize() {
   let sizeInput = prompt("How many cells should the grid have in width and size? Please enter a number between 1-100");
   if (sizeInput > 100 || !Number.isInteger(+sizeInput)) {
     sizeInput = alert("Error! Please enter a valid number between 1-100");
-  } 
-  console.log(sizeInput);
+  }
+  drawNewGrid(sizeInput);
+}
+
+
+//use new grid size input to generate matching numbers of divs/cells
+
+
+
+
+//use new grid size input to calculate new size for cells (divide container size)
+
+function drawNewGrid(i) {
+  let newCellSize = 600 / i;
+  const cellGrid = document.querySelectorAll(".cell");
+  cellGrid.forEach((cell) => {
+    cell.setAttribute("height", newCellSize);
+    cell.setAttribute("width", newCellSize);
+  });
 }
