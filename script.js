@@ -45,5 +45,8 @@ gridSize.addEventListener("click", changeGrid);
 
 function changeGrid() {
   let sizeInput = prompt("How many cells should the grid have in width and size? Please enter a number between 1-100");
+  if (sizeInput > 100 || !Number.isInteger(+sizeInput)) {
+    sizeInput = alert("Error! Please enter a valid number between 1-100");
+  } 
   console.log(sizeInput);
 }
