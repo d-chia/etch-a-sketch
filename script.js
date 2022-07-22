@@ -57,11 +57,11 @@ function changeGridSize() {
 //use new grid size input to calculate new size for cells (divide container size)
 
 function setCellSize(i) {
-  let newCellSize = 600 / i;
+  let newCellSize = (600 / i);
   const cellGrid = document.querySelectorAll(".cell");
   cellGrid.forEach((cell) => {
-    cell.setAttribute("height", newCellSize + "px");
-    cell.setAttribute("width", newCellSize + "px");
+    cell.style.height = (newCellSize + "px");
+    cell.style.width = (newCellSize + "px");
   });
 }
 
