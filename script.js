@@ -32,6 +32,7 @@ const clear = document.querySelector("#clear");
 clear.addEventListener("click", clearCells);
 
 function clearCells() {
+  const cellGrid = document.querySelectorAll(".cell");
   cellGrid.forEach((cell) => {
     cell.classList.remove("cellPainted");}
   )}
@@ -55,6 +56,7 @@ function changeGridSize() {
 
 
 //use new grid size input to calculate new size for cells (divide container size)
+//also add event listener to all new cells
 
 function setCellSize(i) {
   let newCellSize = (600 / i);
@@ -62,6 +64,7 @@ function setCellSize(i) {
   cellGrid.forEach((cell) => {
     cell.style.height = (newCellSize + "px");
     cell.style.width = (newCellSize + "px");
+    cell.addEventListener("mouseenter", paintCell);
   });
 }
 
