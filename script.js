@@ -1,3 +1,7 @@
+//declare global variables and modes
+
+let drawingMode = "classic";
+
 const container = document.querySelector(".container");
 
 
@@ -14,14 +18,18 @@ for (let i = 0; i < 16; i++) {
 const cellGrid = document.querySelectorAll(".cell");
 
 cellGrid.forEach((cell) => {
-    cell.addEventListener("mouseenter", paintCell);
+  cell.addEventListener("mouseenter", paintCell);
 })
 
 
 //declare function that changes class of "painted" cells 
 
 function paintCell() {
-  this.classList.add("cellPainted");
+  if (drawingMode == "classic") {
+    this.style.backgroundColor = ("rgb(98, 98, 98)");
+  } else if (drawingMode == "rainbow") {
+    this.style.backgroundColor = randomColor();
+  }
 };
 
 
@@ -34,7 +42,7 @@ clear.addEventListener("click", clearCells);
 function clearCells() {
   const cellGrid = document.querySelectorAll(".cell");
   cellGrid.forEach((cell) => {
-    cell.classList.remove("cellPainted");}
+    cell.style.backgroundColor = ("ivory");}
   )}
 
  
@@ -52,7 +60,6 @@ function changeGridSize() {
   drawNewGrid(sizeInput);
   setCellSize(sizeInput);
 }
-
 
 
 //use new grid size input to calculate new size for cells (divide container size)
@@ -77,4 +84,20 @@ function drawNewGrid(i) {
     const cell = document.createElement("div");
     cell.classList.add("cell");
     container.appendChild(cell);}
+}
+
+//rainbow button toggles rainbow mode
+
+const rainbow = document.querySelector("#rainbow");
+
+rainbow.addEventListener("click", () => {drawingMode = "rainbow"});
+
+
+//generate random color as rgb value
+
+function randomColor() {
+  let r = Math.floor(Math.random()*255);
+  let g = Math.floor(Math.random()*255);
+  let b = Math.floor(Math.random()*255);
+  return `rgb(${r}, ${g}, ${b})`
 }
