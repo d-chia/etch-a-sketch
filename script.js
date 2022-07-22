@@ -23,3 +23,15 @@ cellGrid.forEach((cell) => {
 function paintCell() {
   this.classList.add("cellPainted");
 };
+
+
+//revert cells back upon click on "clear" button; toggle class
+
+const clear = document.querySelector("#clear");
+
+clear.addEventListener("click", clearCells);
+
+function clearCells() {
+  cellGrid.forEach((cell) => {
+    cell.classList.remove("cellPainted");}
+  )}
