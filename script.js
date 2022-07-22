@@ -86,12 +86,18 @@ function drawNewGrid(i) {
     container.appendChild(cell);}
 }
 
-//rainbow button toggles rainbow mode
+//rainbow button activates rainbow mode
 
 const rainbow = document.querySelector("#rainbow");
 
 rainbow.addEventListener("click", () => {drawingMode = "rainbow"});
 
+
+//classic button activates classic mode
+
+const classic = document.querySelector("#classic");
+
+rainbow.addEventListener("click", () => {drawingMode = "classic"});
 
 //generate random color as rgb value
 

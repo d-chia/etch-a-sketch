@@ -49,7 +49,8 @@ header {
 
 button#clear,
 button#gridSize,
-button#rainbow {
+button#rainbow,
+button#classic {
     margin: 20px 0px;
     width: 100px;
     height: 40px;
