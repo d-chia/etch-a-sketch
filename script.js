@@ -35,3 +35,15 @@ function clearCells() {
   cellGrid.forEach((cell) => {
     cell.classList.remove("cellPainted");}
   )}
+
+ 
+//event listener for gridSize button triggers pop up/input
+
+const gridSize = document.querySelector("#gridSize");
+
+gridSize.addEventListener("click", changeGrid);
+
+function changeGrid() {
+  let sizeInput = prompt("How many cells should the grid have in width and size? Please enter a number between 1-100");
+  console.log(sizeInput);
+}
