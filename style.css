@@ -29,12 +29,12 @@ header {
     height: 600px;
     display: flex;
     flex-wrap: wrap;
+    background-color: ivory;
 }
 
 .cell {
     width: 150px;
-    height: 150px;
-    background-color: none;
+    height: 150px; 
 }
 
 .cellPainted {
@@ -48,7 +48,8 @@ header {
 }
 
 button#clear,
-button#gridSize {
+button#gridSize,
+button#rainbow {
     margin: 20px 0px;
     width: 100px;
     height: 40px;
