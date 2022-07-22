@@ -97,7 +97,7 @@ rainbow.addEventListener("click", () => {drawingMode = "rainbow"});
 
 const classic = document.querySelector("#classic");
 
-rainbow.addEventListener("click", () => {drawingMode = "classic"});
+classic.addEventListener("click", () => {drawingMode = "classic"});
 
 //generate random color as rgb value
 
